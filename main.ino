@@ -19,10 +19,12 @@ ILI9341_due tft = ILI9341_due(TFT_CS, TFT_DC, TFT_RST);
 #define RED             0xF800
 
 //Definicje stałych używanych do obliczeń
+#define TFT_WIDTH 320
+#define TFT_HEIGHT 240
 #define REDRAW_DELAY 64 //Minimalny czas odświeżania wyświetlacza
 #define HOR 100
-#define XC 160 //Współżędna x środka horyzontu
-#define YC 120 //Współżędna y środka horyzontu
+#define XC TFT_WIDTH/2  //Współżędna x środka horyzontu
+#define YC TFT_HEIGHT/2 //Współżędna y środka horyzontu
 #define ANGLE_INC 1
 #define DEG2RAD 0.0174532925
 
@@ -52,9 +54,9 @@ void setup()
     drawHorizon(0, 0);
     drawInfo();
   delay(500);
-//    testRoll();
-//    testPitch();
-  delay(2000);
+//    testRoll();     //Przebiegi testowe - roll
+//    testPitch();    //Przebiegi testowe - pitch
+//  delay(2000);
 }
 
 void loop()
