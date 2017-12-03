@@ -12,7 +12,7 @@ ILI9341_due tft = ILI9341_due(TFT_CS, TFT_DC, TFT_RST);
 
 //Definicje kolorów
 #define BLACK           0x0000
-#define BORDO            0x88E4
+#define CLARET            0x88E4
 #define BLUE           0x057C
 #define WHITE           0xFFFF
 #define YELLOW          0xFFE0
@@ -50,7 +50,7 @@ void setup()
   tft.setFont(SystemFont5x7);
   //Inicjacja podstawowego widoku wyświetlacza
   tft.fillRect(0, 0,  320, 120, BLUE);                     
-  tft.fillRect(0, 120,320, 120, BORDO); 
+  tft.fillRect(0, 120,320, 120, CLARET); 
     drawHorizon(0, 0);
     drawInfo();
   delay(500);
@@ -120,18 +120,18 @@ int16_t y0 = sy * HOR;
   if ((angle != last_roll) && ((abs(angle) > 35)  || (pitch != last_pitch)))
   {
   tft.drawLine(0, YC - y0 - 3 + pitch, 320, YC + y0 - 3 + pitch, BLUE);
-  tft.drawLine(0, YC - y0 + 3 + pitch, 320, YC + y0 + 3 + pitch, BORDO);
+  tft.drawLine(0, YC - y0 + 3 + pitch, 320, YC + y0 + 3 + pitch, CLARET);
   tft.drawLine(0, YC - y0 - 4 + pitch, 320, YC + y0 - 4 + pitch, BLUE);
-  tft.drawLine(0, YC - y0 + 4 + pitch, 320, YC + y0 + 4 + pitch, BORDO);
-  //tft.drawLine(XC - x0, YC - y0 - 5 + pitch, XC + x0, YC + y0 - 5 + pitch, BORDO);
+  tft.drawLine(0, YC - y0 + 4 + pitch, 320, YC + y0 + 4 + pitch, CLARET);
+  //tft.drawLine(XC - x0, YC - y0 - 5 + pitch, XC + x0, YC + y0 - 5 + pitch, CLARET);
   //tft.drawLine(XC - x0, YC - y0 + 5 + pitch, XC + x0, YC + y0 + 5 + pitch, BLUE);
   }
 
   tft.drawLine(0, YC - y0 - 2 + pitch, 320, YC + y0 - 2 + pitch, BLUE);
-  tft.drawLine(0, YC - y0 + 2 + pitch, 320, YC + y0 + 2 + pitch, BORDO);
+  tft.drawLine(0, YC - y0 + 2 + pitch, 320, YC + y0 + 2 + pitch, CLARET);
 
   tft.drawLine(0, YC - y0 - 1 + pitch, 320, YC + y0 - 1 + pitch, BLUE);
-  tft.drawLine(0, YC - y0 + 1 + pitch, 320, YC + y0 + 1 + pitch, BORDO);
+  tft.drawLine(0, YC - y0 + 1 + pitch, 320, YC + y0 + 1 + pitch, CLARET);
 
   tft.drawLine(0, YC - y0 + pitch, 320, YC + y0 + pitch,   WHITE);
 
@@ -178,9 +178,9 @@ void drawInfo(void)
   tft.print("20");
 
   // Wyświetlanie aktualnej wartości przechyłu
-  tft.setTextColor(YELLOW, BORDO);
+  tft.setTextColor(YELLOW, CLARET);
   tft.setTextArea(130, 210, 50, 20);
-  tft.clearTextArea(BORDO);            
+  tft.clearTextArea(CLARET);            
   tft.printAligned(String(last_roll, DEC), gTextAlignMiddleCenter);
 }
 
@@ -203,7 +203,7 @@ int angleGenerator(int maxAngle)  //Generator przechyłu - do testu
 
 void testRoll(void) //Obrót wokół osi poziomej wzdłużnej - przebieg testowy
 {
-  tft.setTextColor(YELLOW, BORDO);
+  tft.setTextColor(YELLOW, CLARET);
   tft.setTextArea(120, 180, 50, 10);
   tft.printAligned("Roll test", gTextAlignMiddleCenter);
 
@@ -213,14 +213,14 @@ void testRoll(void) //Obrót wokół osi poziomej wzdłużnej - przebieg testowy
   updateHorizon(angleGenerator(50), 0);
   }
   
-  tft.setTextColor(YELLOW, BORDO);
+  tft.setTextColor(YELLOW, CLARET);
   tft.setTextArea(120, 180, 50, 10);
   tft.printAligned("                ", gTextAlignMiddleCenter);
 }
 
 void testPitch(void)        //Obrót wokół osi poprzecznej - przebieg testowy
 {
-  tft.setTextColor(YELLOW, BORDO);
+  tft.setTextColor(YELLOW, CLARET);
   tft.setTextArea(120, 180, 50, 10);            
   tft.printAligned("Pitch test", gTextAlignMiddleCenter);
 
@@ -242,7 +242,7 @@ void testPitch(void)        //Obrót wokół osi poprzecznej - przebieg testowy
   updateHorizon(0, p);
   }
 
-  tft.setTextColor(YELLOW, BORDO);
+  tft.setTextColor(YELLOW, CLARET);
   tft.setTextArea(120, 180, 50, 10);            
   tft.printAligned("                ", gTextAlignMiddleCenter);
 }
