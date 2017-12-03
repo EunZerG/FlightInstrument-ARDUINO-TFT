@@ -201,7 +201,7 @@ int angleGenerator(int maxAngle)  //Generator przechyłu - do testu
   return test_angle;
 }
 
-void testRoll(void) //Obrót - przebieg testowy
+void testRoll(void) //Obrót wokół osi poziomej wzdłużnej - przebieg testowy
 {
   tft.setTextColor(YELLOW, BORDO);
   tft.setTextArea(120, 180, 50, 10);
@@ -218,7 +218,7 @@ void testRoll(void) //Obrót - przebieg testowy
   tft.printAligned("                ", gTextAlignMiddleCenter);
 }
 
-void testPitch(void)        //Nachylenie - przebieg testowy
+void testPitch(void)        //Obrót wokół osi poprzecznej - przebieg testowy
 {
   tft.setTextColor(YELLOW, BORDO);
   tft.setTextArea(120, 180, 50, 10);            
