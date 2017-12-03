@@ -78,8 +78,9 @@ void updateHorizon(int angle, int pitch)
   while ((last_pitch != pitch) || (last_roll != angle))
   {
   delta_pitch = 0;
-  delta_roll  = 0;
+  delta_roll  = 0;0
 
+    //Obrót wokół osi poprzecznej
     if (last_pitch < pitch)
     {
     delta_pitch = 1;
@@ -92,6 +93,7 @@ void updateHorizon(int angle, int pitch)
     pitch_error = last_pitch - pitch;
     }
     
+    //Obrót wokół osi poziomej wzdłużnej
     if (last_roll < angle) 
       delta_roll  = 1;
     if (last_roll > angle) 
